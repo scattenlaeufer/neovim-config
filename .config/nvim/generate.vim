@@ -49,8 +49,8 @@ Plug 'dense-analysis/ale'
 Plug 'Yggdroot/indentLine'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
-Plug 'tomasr/molokai'
-Plug 'altercation/vim-colors-solarized'
+"Plug 'tomasr/molokai'
+"Plug 'altercation/vim-colors-solarized'
 
 
 if isdirectory('/usr/local/opt/fzf')
@@ -81,6 +81,7 @@ Plug 'honza/vim-snippets'
 "" Python Bundle
 Plug 'davidhalter/jedi-vim'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+Plug 'ambv/black'
 
 
 " rust
@@ -102,6 +103,13 @@ Plug 'prabirshrestha/asyncomplete.vim'
 " Asyncomplete lsp.vim
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
+" LaTeX
+Plug 'lervag/vimtex'
+
+Plug 'sheerun/vim-polyglot'
+
+" Generate proper code documentation skeletons with a single keypress.
+Plug 'kkoomen/vim-doge'
 
 "*****************************************************************************
 "*****************************************************************************
@@ -168,6 +176,8 @@ syntax on
 set ruler
 set number
 set relativenumber
+
+set scrolloff=6
 
 let no_buffers_menu=1
 set background=dark
@@ -505,6 +515,10 @@ au FileType rust nmap gd <Plug>(rust-def)
 au FileType rust nmap gs <Plug>(rust-def-split)
 au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
+
+let g:rust_fold = 1
+let g:rustfmt_autosave_if_config_present = 1
+let g:rustfmt_options = '--edition="2021"'
 
 
 
