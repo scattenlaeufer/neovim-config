@@ -109,7 +109,9 @@ Plug 'lervag/vimtex'
 Plug 'sheerun/vim-polyglot'
 
 " Generate proper code documentation skeletons with a single keypress.
-Plug 'kkoomen/vim-doge'
+Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
+
+Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 
 "*****************************************************************************
 "*****************************************************************************
@@ -500,7 +502,8 @@ let g:jedi#smart_auto_mappings = 0
 
 " ale
 :call extend(g:ale_linters, {
-    \'python': ['flake8'], })
+    \'python': ['pylint', 'mypy'],
+    \'rust': ['analyzer'],})
 
 " vim-airline
 let g:airline#extensions#virtualenv#enabled = 1
@@ -520,7 +523,13 @@ let g:rust_fold = 1
 let g:rustfmt_autosave_if_config_present = 1
 let g:rustfmt_options = '--edition="2021"'
 
+" vim-doge
+let g:doge_mapping = "<leader>D"
 
+" Prettier
+let g:prettier#autoformat = 0
+"autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml PrettierAsync
 
 "*****************************************************************************
 "*****************************************************************************
