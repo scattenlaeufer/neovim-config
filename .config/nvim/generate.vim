@@ -11,7 +11,7 @@ else
 endif
 
 let g:vim_bootstrap_langs = "python,rust"
-let g:vim_bootstrap_editor = "nvim"				" nvim or vim
+let g:vim_bootstrap_editor = "nvim"                            " nvim or vim
 let g:vim_bootstrap_theme = "molokai"
 let g:vim_bootstrap_frams = ""
 
@@ -56,12 +56,12 @@ Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 else
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do':'./install --bin' }
   Plug 'junegunn/fzf.vim'
 endif
 let g:make = 'gmake'
 if exists('make')
-        let g:make = 'make'
+  let g:make = 'make'
 endif
 Plug 'Shougo/vimproc.vim', {'do': g:make}
 
@@ -105,6 +105,7 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 " LaTeX
 Plug 'lervag/vimtex'
+Plug 'da-h/AirLatex.vim', {'do': ':UpdateRemotePlugins'}
 
 Plug 'sheerun/vim-polyglot'
 
@@ -112,6 +113,15 @@ Plug 'sheerun/vim-polyglot'
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
+
+" Just command runner
+Plug 'NoahTheDuke/vim-just'
+
+" Some helpfull commands to run on words
+Plug 'tpope/vim-abolish'
+
+" Github Copilot
+Plug 'github/copilot.vim'
 
 "*****************************************************************************
 "*****************************************************************************
@@ -530,6 +540,13 @@ let g:doge_mapping = "<leader>D"
 let g:prettier#autoformat = 0
 "autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml PrettierAsync
+
+" AirLatex
+let g:AirLatexUsername="cookies"
+
+" Markdown Enable code highligting in fenced Markdown blocks
+let g:vim_markdown_conceal_code_blocks = 0
+let g:markdown_fenced_languages = ['htm', 'python', 'rust', 'yaml', 'toml', 'sh', 'bash']
 
 "*****************************************************************************
 "*****************************************************************************
