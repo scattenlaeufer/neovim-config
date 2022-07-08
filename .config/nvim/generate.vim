@@ -123,6 +123,9 @@ Plug 'tpope/vim-abolish'
 " Github Copilot
 Plug 'github/copilot.vim'
 
+" Merging made easier
+Plug 'samoshkin/vim-mergetool'
+
 "*****************************************************************************
 "*****************************************************************************
 
