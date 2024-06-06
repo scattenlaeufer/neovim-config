@@ -46,7 +46,7 @@ Plug 'vim-scripts/CSApprox'
 Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
 Plug 'dense-analysis/ale'
-Plug 'Yggdroot/indentLine'
+"Plug 'Yggdroot/indentLine'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 "Plug 'tomasr/molokai'
@@ -70,7 +70,7 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 
 "" Snippets
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 "*****************************************************************************
@@ -125,6 +125,13 @@ Plug 'github/copilot.vim'
 
 " Merging made easier
 Plug 'samoshkin/vim-mergetool'
+
+" ChatGPT plugin
+Plug 'MunifTanjim/nui.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'folke/trouble.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'jackMort/ChatGPT.nvim'
 
 "*****************************************************************************
 "*****************************************************************************
@@ -598,3 +605,5 @@ else
   let g:airline_symbols.readonly = ''
   let g:airline_symbols.linenr = ''
 endif
+
+set t_BE=
