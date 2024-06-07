@@ -218,7 +218,7 @@ hi ColorColumn ctermbg=darkgrey
 
 "markings vor eol etc
 set list
-set listchars=eol:$,tab:>.,trail:~,extends:>,precedes:<
+set listchars=tab:>.,trail:~,extends:>,precedes:<
 
 " Better command line completion 
 set wildmenu
